@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca gratis · Ya Automatizalo</title>
+<meta name="description" content="Biblioteca gratis de guías y prompts para usar Claude e IA en tu trabajo.">
+<meta property="og:title" content="Biblioteca gratis · Ya Automatizalo">
+<meta property="og:description" content="Guías, prompts y fichas para usar Claude en tu trabajo. Gratis.">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<main class="wrap">
+
+  <div class="brand"><span class="bolt">⚡</span><span><b>Ya Automatizalo</b> · @yaautomatizalo.ia</span></div>
+
+  <span class="tag">Gratis</span>
+  <h1>La biblioteca gratis para usar <span>IA en tu trabajo</span></h1>
+  <p class="lead">Guías y prompts listos para copiar, de los videos de la cuenta. No hace falta saber programar. Dejá tu mail y te abrimos todo al toque.</p>
+
+  <h2 class="sec">Qué hay adentro</h2>
+  <div class="lib" id="libPreview"></div>
+
+  <!-- FORMULARIO -->
+  <section class="card" id="formCard">
+    <form id="leadForm" novalidate>
+      <label for="nombre">Tu nombre</label>
+      <input id="nombre" name="nombre" type="text" autocomplete="given-name" required maxlength="80">
+
+      <label for="email">Tu mail</label>
+      <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120">
+
+      <label for="uso">¿Para qué lo querés usar?</label>
+      <select id="uso" name="uso">
+        <option value="">Elegí una opción (opcional)</option>
+        <option>Estudio o uso personal</option>
+        <option>Mi trabajo</option>
+        <option>Tengo una empresa y quiero automatizar cosas</option>
+      </select>
+
+      <!-- Campo trampa para bots: las personas no lo ven -->
+      <div class="hp" aria-hidden="true">
+        <label for="web">No completar</label>
+        <input id="web" name="web" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <label class="check">
+        <input id="consent" name="consent" type="checkbox" required>
+        <span>Acepto recibir el material y novedades por mail. Me puedo dar de baja cuando quiera. <a href="privacidad.html" target="_blank">Política de privacidad</a>.</span>
+      </label>
+
+      <button id="btn" type="submit">Quiero la biblioteca gratis</button>
+      <div id="msg" class="msg" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <a class="biz" id="bizCard" href="empresas.html">
+    <b>¿Tenés un negocio?</b>
+    <span>Automatizamos WhatsApp, mails y planillas para empresas. Primera charla sin costo.</span><br>
+    <em>Ver cómo trabajamos →</em>
+  </a>
+
+  <!-- PANTALLA DE GRACIAS (se muestra después de enviar) -->
+  <section class="card done" id="doneCard" hidden>
+    <h2>¡Listo, <span id="doneName">gracias</span>!</h2>
+    <p>Tocá el que quieras para abrirlo o descargarlo. También te mandamos el link de la biblioteca por mail para que la tengas guardada (si no lo ves, revisá Promociones o Spam).</p>
+    <div class="lib" id="libFull"></div>
+    <div class="next">
+      <h3>Próximos pasos</h3>
+      <div class="pro" id="proBox">
+        <b>Biblioteca Pro · próximamente</b>
+        <p>Más de 100 prompts por área, proyectos de Claude listos y recetas de automatización. Pago único. Anotate y te avisamos primero cuando salga.</p>
+        <button id="proBtn" type="button">Avisame cuando salga</button>
+      </div>
+      <a class="btn2" href="https://instagram.com/yaautomatizalo.ia" target="_blank" rel="noopener">Seguir a @yaautomatizalo.ia</a>
+      <a class="btn2" id="ctaEmpresa" href="empresas.html">¿Tenés un negocio? Ver automatizaciones para empresas</a>
+    </div>
+  </section>
+
+  <footer>
+    <span id="footerName"></span> · <a href="privacidad.html">Privacidad</a>
+  </footer>
+</main>
+
+<script src="biblioteca.js"></script>
+<script>
+/* =========================================================
+   CONFIG: completá estos datos. Es lo único que hay que tocar.
+   (Los materiales se cambian en biblioteca.js)
+   ========================================================= */
+const CONFIG = {
+  // URL de la "Aplicación web" de Google Apps Script.
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycby5F-4F-pe_pTcolzzUSynaQaLiOpp9hrhxUplvSeLYJw_9sEbU7LA6_nZgGMu1-xbB/exec",
+  // Nombre de MARCA (nunca tu nombre personal). Aparece abajo de todo.
+  NOMBRE_CUENTA: "Ya Automatizalo · @yaautomatizalo.ia"
+};
+/* ========================================================= */
+
+const $ = id => document.getElementById(id);
+$("footerName").textContent = CONFIG.NOMBRE_CUENTA;
+pintarBiblioteca($("libPreview"), false);
+pintarBiblioteca($("libFull"), true);
+
+// De dónde viene la persona: ?utm_source=instagram o ?src=tiktok en el link
+const qs = new URLSearchParams(location.search);
+const origen = qs.get("src") || qs.get("utm_source") || (document.referrer ? new URL(document.referrer).hostname : "directo");
+const campania = qs.get("utm_campaign") || qs.get("video") || "";
+
+function showError(t){ const m=$("msg"); m.textContent=t; m.className="msg err"; }
+
+$("leadForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const nombre = $("nombre").value.trim();
+  const email  = $("email").value.trim();
+  if (!nombre) return showError("Poné tu nombre.");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return showError("Revisá el mail, parece que tiene un error.");
+  if (!$("consent").checked) return showError("Para mandarte el material tenés que aceptar la casilla.");
+
+  const btn = $("btn");
+  btn.disabled = true; btn.textContent = "Enviando…"; $("msg").textContent = "";
+
+  const datos = new URLSearchParams({
+    nombre, email,
+    uso: $("uso").value,
+    origen, campania,
+    consent: "si",
+    web: $("web").value   // trampa para bots
+  });
+
+  try {
+    // no-cors: Google no deja leer la respuesta, pero los datos llegan igual.
+    await fetch(CONFIG.SCRIPT_URL, { method: "POST", mode: "no-cors", body: datos });
+  } catch (err) {
+    btn.disabled = false; btn.textContent = "Quiero la biblioteca gratis";
+    return showError("No se pudo enviar. Revisá tu conexión y probá de nuevo.");
+  }
+
+  $("doneName").textContent = nombre.split(" ")[0];
+  if ($("uso").value.startsWith("Tengo una empresa")) $("ctaEmpresa").style.borderColor = "var(--accent)";
+  $("bizCard").hidden = true;
+  window._email = email; window._nombre = nombre;
+  $("formCard").hidden = true;
+  $("libPreview").hidden = true;
+  document.querySelector("h2.sec").hidden = true;
+  $("doneCard").hidden = false;
+  $("doneCard").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// Lista de espera de la Biblioteca Pro
+$("proBtn").addEventListener("click", async () => {
+  const b = $("proBtn"); b.disabled = true; b.textContent = "Anotando…";
+  try {
+    await fetch(CONFIG.SCRIPT_URL, { method: "POST", mode: "no-cors",
+      body: new URLSearchParams({ tipo: "espera", email: window._email || "", nombre: window._nombre || "" }) });
+    b.textContent = "¡Listo! Te avisamos por mail";
+  } catch (e) { b.disabled = false; b.textContent = "Avisame cuando salga"; }
+});
+</script>
+</body>
+</html>

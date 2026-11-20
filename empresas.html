@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatizaciones para empresas · Ya Automatizalo</title>
+<meta name="description" content="Automatizamos tareas repetitivas de tu negocio: WhatsApp, mails, planillas y sistemas a medida.">
+<meta property="og:title" content="Automatizaciones para empresas · Ya Automatizalo">
+<meta property="og:description" content="WhatsApp, mails, planillas y sistemas a medida. Primera charla sin costo.">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<main class="wrap">
+
+  <div class="brand"><span class="bolt">⚡</span><span><b>Ya Automatizalo</b> · @yaautomatizalo.ia</span></div>
+
+  <span class="tag">Para empresas</span>
+  <h1>Sacale a tu equipo las tareas <span>que se repiten</span></h1>
+  <p class="lead">Armamos automatizaciones con IA para negocios, estudios y oficinas. Vos nos contás qué te come tiempo y te decimos si se puede automatizar, cuánto sale y cuánto tarda.</p>
+
+  <h2 class="sec">Qué automatizamos</h2>
+  <div class="lib">
+    <div class="item"><span class="ic">💬</span><div class="tx"><b>Respuestas de WhatsApp</b><span class="desc">Un agente que contesta preguntas de clientes (precios, horarios, envíos) y te pasa a una persona cuando hace falta. Solo con la API oficial de WhatsApp de Meta.</span></div></div>
+    <div class="item"><span class="ic">📨</span><div class="tx"><b>Mails y consultas</b><span class="desc">Ordenar la bandeja, preparar respuestas, clasificar pedidos y avisar lo urgente.</span></div></div>
+    <div class="item"><span class="ic">📊</span><div class="tx"><b>Planillas y datos</b><span class="desc">Pasar facturas, formularios o pedidos a una planilla sin copiar y pegar, y armar reportes solos.</span></div></div>
+    <div class="item"><span class="ic">🛠️</span><div class="tx"><b>Sistemas a medida</b><span class="desc">Cuando una planilla ya no alcanza: un sistema web simple para tu proceso, con su soporte mensual.</span></div></div>
+  </div>
+
+  <h2 class="sec">Cómo trabajamos</h2>
+  <ol class="steps">
+    <li><b>Charla de 20 minutos, sin costo</b><span>Nos contás la tarea. Si no tiene sentido automatizarla, te lo decimos.</span></li>
+    <li><b>Propuesta con precio cerrado</b><span>Qué hace, cuánto sale, cuánto tarda y qué necesitamos de vos.</span></li>
+    <li><b>Entrega y soporte</b><span>Lo dejamos andando, te mostramos cómo usarlo y queda el soporte mensual si lo querés.</span></li>
+  </ol>
+  <p class="fine">Tus datos y los de tus clientes se usan solo para el proyecto. No prometemos ahorros que no podamos medir: antes de empezar acordamos cómo vamos a medir el resultado.</p>
+
+  <h2 class="sec">Contanos qué querés automatizar</h2>
+  <section class="card" id="formCard">
+    <form id="bizForm" novalidate>
+      <label for="nombre">Tu nombre</label>
+      <input id="nombre" type="text" autocomplete="name" required maxlength="80">
+
+      <label for="email">Tu mail</label>
+      <input id="email" type="email" autocomplete="email" inputmode="email" required maxlength="120">
+
+      <label for="empresa">Empresa o rubro</label>
+      <input id="empresa" type="text" maxlength="100" placeholder="Ej.: ferretería, estudio contable, inmobiliaria">
+
+      <label for="tarea">¿Qué tarea te gustaría automatizar?</label>
+      <textarea id="tarea" maxlength="1000" required placeholder="Ej.: respondemos 40 WhatsApp por día con las mismas preguntas de precios y envíos"></textarea>
+
+      <label for="tiempo">¿Cuánto tiempo les lleva hoy?</label>
+      <select id="tiempo">
+        <option value="">Elegí una opción (opcional)</option>
+        <option>Menos de 2 horas por semana</option>
+        <option>De 2 a 5 horas por semana</option>
+        <option>De 5 a 10 horas por semana</option>
+        <option>Más de 10 horas por semana</option>
+      </select>
+
+      <label for="presupuesto">Presupuesto aproximado</label>
+      <select id="presupuesto">
+        <option value="">Todavía no sé</option>
+        <option>Hasta USD 300</option>
+        <option>USD 300 a 800</option>
+        <option>USD 800 a 2.000</option>
+        <option>Más de USD 2.000</option>
+      </select>
+
+      <label for="whatsapp">WhatsApp (opcional, si preferís que te escribamos ahí)</label>
+      <input id="whatsapp" type="text" inputmode="tel" maxlength="30">
+
+      <div class="hp" aria-hidden="true"><label for="web">No completar</label><input id="web" type="text" tabindex="-1" autocomplete="off"></div>
+
+      <label class="check">
+        <input id="consent" type="checkbox" required>
+        <span>Acepto que usen estos datos para responder mi consulta. <a href="privacidad.html" target="_blank">Política de privacidad</a>.</span>
+      </label>
+
+      <button id="btn" type="submit">Enviar consulta</button>
+      <div id="msg" class="msg" role="status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <section class="card done" id="doneCard" hidden>
+    <h2>¡Recibido!</h2>
+    <p>Te respondemos por mail en 1 o 2 días hábiles para coordinar la charla. Si no ves el mail, revisá Promociones o Spam.</p>
+    <a class="btn2" href="index.html">Ver la biblioteca gratis</a>
+  </section>
+
+  <footer>Ya Automatizalo · @yaautomatizalo.ia · <a href="privacidad.html">Privacidad</a></footer>
+</main>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby5F-4F-pe_pTcolzzUSynaQaLiOpp9hrhxUplvSeLYJw_9sEbU7LA6_nZgGMu1-xbB/exec";
+const $ = id => document.getElementById(id);
+const qs = new URLSearchParams(location.search);
+const origen = qs.get("src") || qs.get("utm_source") || (document.referrer ? new URL(document.referrer).hostname : "directo");
+
+function showError(t){ const m=$("msg"); m.textContent=t; m.className="msg err"; }
+
+$("bizForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const nombre = $("nombre").value.trim(), email = $("email").value.trim(), tarea = $("tarea").value.trim();
+  if (!nombre) return showError("Poné tu nombre.");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return showError("Revisá el mail, parece que tiene un error.");
+  if (!tarea) return showError("Contanos brevemente qué querés automatizar.");
+  if (!$("consent").checked) return showError("Para responderte tenés que aceptar la casilla.");
+  const btn = $("btn"); btn.disabled = true; btn.textContent = "Enviando…";
+  const datos = new URLSearchParams({
+    tipo: "empresa", nombre, email, tarea,
+    empresa: $("empresa").value, tiempo: $("tiempo").value, presupuesto: $("presupuesto").value,
+    whatsapp: $("whatsapp").value, origen, consent: "si", web: $("web").value
+  });
+  try { await fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: datos }); }
+  catch (err) { btn.disabled = false; btn.textContent = "Enviar consulta"; return showError("No se pudo enviar. Revisá tu conexión y probá de nuevo."); }
+  $("formCard").hidden = true; $("doneCard").hidden = false;
+  $("doneCard").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+</script>
+</body>
+</html>
