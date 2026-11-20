@@ -5,6 +5,14 @@
    ========================================================= */
 const BIBLIOTECA = [
   {
+    archivo: "Ficha_GASTOS_Ya_Automatizalo.pdf",
+    icono: "🧾",
+    titulo: "GASTOS: tu app de gastos sin pagar",
+    texto: "Foto del ticket y Claude te arma la planilla: los pedidos exactos para un ticket, para todo el mes, y cómo revisar los números.",
+    detalle: "PDF · 2 páginas",
+    tag: "Nuevo"
+  },
+  {
     archivo: "Guia_AGENTE_Ya_Automatizalo.pdf",
     icono: "🤖",
     titulo: "Guía AGENTE: tu primer agente de IA",
