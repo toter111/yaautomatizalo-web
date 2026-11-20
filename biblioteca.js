@@ -34,7 +34,7 @@ const BIBLIOTECA = [
     titulo: "Guía SISTEMA: Reels animados con Claude",
     texto: "Los 5 pasos y los pedidos exactos que usamos: una línea, cinco ganchos, fuentes reales, animación por código y revisión automática.",
     detalle: "PDF · 2 páginas",
-    tag: "Nuevo"
+    tag: ""
   },
   {
     archivo: "Pedidos_JEFE_Ya_Automatizalo.pdf",
@@ -42,7 +42,7 @@ const BIBLIOTECA = [
     titulo: "Los 3 pedidos JEFE: acta, Excel y cliente enojado",
     texto: "Tres pedidos para copiar y pegar en Claude: el acta de una reunión, el informe de un Excel y la respuesta a un cliente enojado.",
     detalle: "PDF · 2 páginas",
-    tag: "Nuevo"
+    tag: ""
   },
   {
     archivo: "Kit_Ya_Automatizalo.pdf",
@@ -58,7 +58,7 @@ const BIBLIOTECA = [
     titulo: "Guía TRADE: 11 skills de trading gratis para Claude",
     texto: "Cómo instalarlas en 10 minutos, bonus: la máquina del tiempo (10.000 simulaciones), y una rutina de 15 minutos. No es consejo financiero.",
     detalle: "PDF · 4 páginas",
-    tag: "Nuevo"
+    tag: ""
   },
   {
     archivo: "Guia_7_pedidos_Ya_Automatizalo.pdf",
