@@ -5,12 +5,52 @@
    ========================================================= */
 const BIBLIOTECA = [
   {
+    archivo: "Ficha_PRESUPUESTO_Ya_Automatizalo.pdf",
+    icono: "🧮",
+    titulo: "PRESUPUESTO: contestá un precio en un minuto",
+    texto: "Tu lista de precios más el mensaje del cliente, y Claude te arma el presupuesto listo para revisar y mandar, con lo que falta confirmar marcado.",
+    detalle: "PDF · 2 páginas",
+    tag: "Nuevo"
+  },
+  {
+    archivo: "Ficha_RESENAS_Ya_Automatizalo.pdf",
+    icono: "⭐",
+    titulo: "RESEÑAS: tres quejas, una sola causa",
+    texto: "El pedido para encontrar qué se repite en las quejas de tus clientes y salir con una idea barata para probar mañana.",
+    detalle: "PDF · 2 páginas",
+    tag: "Nuevo"
+  },
+  {
+    archivo: "Ficha_COMANDA_Ya_Automatizalo.pdf",
+    icono: "🥟",
+    titulo: "COMANDA: del audio desordenado a la comanda limpia",
+    texto: "El pedido por audio, con cambios y todo, convertido en cantidades finales, total y hora de retiro para la cocina.",
+    detalle: "PDF · 2 páginas",
+    tag: "Nuevo"
+  },
+  {
+    archivo: "Ficha_FORMULA_Ya_Automatizalo.pdf",
+    icono: "📗",
+    titulo: "FORMULA: 5 pedidos para Excel en español",
+    texto: "Decile qué hay en cada columna y qué necesitás: cinco pedidos listos con la fórmula que devolvió Claude, probados en una planilla.",
+    detalle: "PDF · 2 páginas",
+    tag: ""
+  },
+  {
+    archivo: "Ficha_PDF_Ya_Automatizalo.pdf",
+    icono: "📄",
+    titulo: "PDF: cómo pasarle documentos largos a Claude",
+    texto: "Tres reglas de la guía oficial y un pedido para copiar: el documento primero, la pregunta al final y las citas con número de página.",
+    detalle: "PDF · 2 páginas",
+    tag: ""
+  },
+  {
     archivo: "Ficha_GASTOS_Ya_Automatizalo.pdf",
     icono: "🧾",
     titulo: "GASTOS: tu app de gastos sin pagar",
     texto: "Foto del ticket y Claude te arma la planilla: los pedidos exactos para un ticket, para todo el mes, y cómo revisar los números.",
     detalle: "PDF · 2 páginas",
-    tag: "Nuevo"
+    tag: ""
   },
   {
     archivo: "Guia_AGENTE_Ya_Automatizalo.pdf",
@@ -18,7 +58,7 @@ const BIBLIOTECA = [
     titulo: "Guía AGENTE: tu primer agente de IA",
     texto: "Chat vs agente, tu primer encargo paso a paso sin romper nada, flujo o agente y cómo funciona un agente de WhatsApp para un negocio.",
     detalle: "PDF · 3 páginas",
-    tag: "Nuevo"
+    tag: ""
   },
   {
     archivo: "Ficha_LIMITE_Ya_Automatizalo.pdf",
@@ -26,7 +66,7 @@ const BIBLIOTECA = [
     titulo: "LIMITE: 5 trucos para que Claude te rinda más",
     texto: "Los consejos de la ayuda oficial explicados en simple: juntar preguntas, pedir claro, Proyectos, qué gasta más y dónde ver tu uso.",
     detalle: "PDF · 2 páginas",
-    tag: "Nuevo"
+    tag: ""
   },
   {
     archivo: "Guia_SISTEMA_Ya_Automatizalo.pdf",
