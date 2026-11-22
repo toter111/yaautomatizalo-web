@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fábrica de Reels · Ya Automatizalo</title>
+<meta name="description" content="La carpeta con la que Claude arma Reels con animación, voz, subtítulos y música. Vos le decís el tema.">
+<meta property="og:title" content="Fábrica de Reels · Ya Automatizalo">
+<meta property="og:description" content="Claude arma tus Reels con animación, voz y subtítulos. Vos le decís el tema.">
+<meta property="og:image" content="fabrica/ejemplo.jpg">
+<link rel="stylesheet" href="estilos.css">
+<style>
+.demo{display:flex;gap:16px;align-items:flex-start;margin:0 0 26px}
+.demo video{width:46%;max-width:240px;border-radius:16px;border:1px solid var(--line);background:#000;flex:0 0 auto}
+.demo .side{flex:1;min-width:0;color:var(--muted);font-size:15px}
+.demo .side b{color:var(--text)}
+.price{display:flex;align-items:baseline;gap:10px;margin:0 0 12px}
+.price .n{font-size:40px;font-weight:900;letter-spacing:-.02em}
+.price .u{color:var(--muted);font-size:15px}
+a.buy{display:block;text-align:center;font-weight:800;font-size:18px;border-radius:12px;padding:15px;background:var(--accent);color:var(--accent-ink);text-decoration:none}
+a.buy.off{opacity:.55;pointer-events:none}
+.need li{margin:0 0 6px;color:var(--muted)}
+.need b{color:var(--text)}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 8px}
+details summary{cursor:pointer;font-weight:700}
+details p{color:var(--muted);margin:8px 0 0;font-size:15px}
+@media (max-width:420px){.demo{flex-direction:column}.demo video{width:100%;max-width:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <div class="brand"><span class="bolt">⚡</span><span><b>Ya Automatizalo</b> · @yaautomatizalo.ia</span></div>
+
+  <span class="tag">Fábrica de Reels</span>
+  <h1>Le decís el tema. <span>Claude arma el Reel.</span></h1>
+  <p class="lead">Es la carpeta con la que hacemos los Reels de esta cuenta, preparada para que la uses vos sin saber programar. Claude escribe el guion, pone la voz, anima, arma el video y lo revisa.</p>
+
+  <div class="demo">
+    <video src="fabrica/ejemplo.mp4" poster="fabrica/ejemplo.jpg" controls playsinline preload="none"></video>
+    <div class="side"><b>Este video salió de la Fábrica.</b><br>Texto, voz, subtítulos palabra por palabra, efectos y música: todo armado con código, sin editor. Lo único que se hizo a mano fue escribir el pedido.</div>
+  </div>
+
+  <h2 class="sec">Qué incluye</h2>
+  <div class="lib">
+    <div class="item"><span class="ic">🎬</span><div class="tx"><b>El motor de video</b><span class="desc">Reels verticales 2D y 3D (1080x1920) con tu nombre, tu color y tu voz. Música y efectos propios, sin derechos de terceros.</span></div></div>
+    <div class="item"><span class="ic">🧠</span><div class="tx"><b>5 habilidades para Claude</b><span class="desc">Hacer un Reel, configurar tu marca, buscar ideas, revisar el video con 10 puntos y escribir la descripción y el mensaje para quien comenta.</span></div></div>
+    <div class="item"><span class="ic">🧩</span><div class="tx"><b>4 ejemplos para copiar</b><span class="desc">Plantilla básica, reseñas, fórmula de planilla y un mundo 3D bajo el agua.</span></div></div>
+    <div class="item"><span class="ic">🗂️</span><div class="tx"><b>Guías</b><span class="desc">12 formatos de Reels, 30 ganchos, 20 ideas para cualquier rubro, calendario y rutina semanal.</span></div></div>
+    <div class="item"><span class="ic">🧭</span><div class="tx"><b>Guía paso a paso</b><span class="desc">Para quien nunca programó: descomprimís, abrís la carpeta en Claude y escribís "Prepará todo".</span></div></div>
+  </div>
+
+  <h2 class="sec">Cómo funciona</h2>
+  <ol class="steps">
+    <li><b>Abrís la carpeta en Claude Code</b><span>Claude instala solo lo que falta y te muestra un video de ejemplo.</span></li>
+    <li><b>Ponés tu marca</b><span>Nombre, cuenta, color y, si querés, tu voz de ElevenLabs.</span></li>
+    <li><b>Pedís el Reel</b><span>"Hacé un Reel sobre 3 errores al hacer pan casero." Te devuelve el video, la portada y la descripción.</span></li>
+  </ol>
+
+  <h2 class="sec">Qué necesitás</h2>
+  <ul class="need">
+    <li><b>Computadora</b> con Windows 10/11 o Mac. Los videos se arman en la compu y se publican desde el celular.</li>
+    <li><b>Claude Pro o superior</b> (incluye Claude Code). Se paga aparte, a Anthropic.</li>
+    <li><b>ElevenLabs</b> para la voz, opcional (tiene plan gratis para probar). Sin voz, los videos salen con texto y música.</li>
+  </ul>
+
+  <section class="card" style="margin-top:22px">
+    <div class="price"><span class="n" id="precio">USD 19</span><span class="u">pago único · precio de lanzamiento</span></div>
+    <a class="buy off" id="buy" href="#" rel="noopener">Muy pronto</a>
+    <p class="note">El pago se hace en Hotmart. Recibís el acceso al instante, por mail.</p>
+  </section>
+
+  <h2 class="sec">Preguntas</h2>
+  <details><summary>¿Tengo que saber programar?</summary><p>No. Claude hace la parte técnica; vos le hablás en español. La guía está pensada para alguien que nunca abrió un programa así.</p></details>
+  <details><summary>¿Me garantiza vistas o seguidores?</summary><p>No. Es un método para hacer más videos con menos trabajo. Lo que pase con ellos depende de tu tema, de tu constancia y de tu público.</p></details>
+  <details><summary>¿Sirve para cualquier tema?</summary><p>Sí. Los formatos, ganchos e ideas son para cualquier rubro: cocina, negocios, fitness, educación, lo que sea.</p></details>
+  <details><summary>¿Tiene que ser con Claude?</summary><p>Sí. La carpeta está hecha para Claude Code, que viene con el plan Pro de Claude.</p></details>
+  <details><summary>¿Cuánto tarda cada video?</summary><p>Un video 2D se arma en unos minutos. Uno 3D puede tardar de 10 a 30 minutos, según tu computadora.</p></details>
+
+  <p class="fine" style="margin-top:22px">Claude es un producto de Anthropic y ElevenLabs es un servicio de ElevenLabs. La Fábrica de Reels no está hecha, avalada ni patrocinada por esas empresas.</p>
+
+  <footer>Ya Automatizalo · @yaautomatizalo.ia · <a href="index.html">Biblioteca gratis</a> · <a href="privacidad.html">Privacidad</a></footer>
+</main>
+<script>
+// Cuando esté el link de pago de Hotmart, se pone acá y el botón se activa solo.
+const CHECKOUT_URL = "";
+const PRECIO = "USD 19";
+document.getElementById('precio').textContent = PRECIO;
+if (CHECKOUT_URL) {
+  const b = document.getElementById('buy');
+  const src = new URLSearchParams(location.search).get('src');
+  b.href = CHECKOUT_URL + (src ? (CHECKOUT_URL.includes('?') ? '&' : '?') + 'src=' + encodeURIComponent(src) : '');
+  b.textContent = 'Comprar la Fábrica de Reels';
+  b.classList.remove('off');
+}
+</script>
+</body>
+</html>
