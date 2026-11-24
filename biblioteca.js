@@ -5,28 +5,56 @@
    ========================================================= */
 const BIBLIOTECA = [
   {
+    archivo: "Ficha_GANCHOS_Ya_Automatizalo.pdf",
+    icono: "🎣",
+    titulo: "GANCHOS: 5 arranques para tu video antes de grabar",
+    texto: "El pedido para que Claude te dé cinco comienzos distintos y te diga cuál conviene y por qué. Los primeros 3 segundos deciden si se quedan.",
+    detalle: "PDF · 2 páginas",
+    tag: "Nuevo"
+  },
+  {
+    archivo: "Ficha_GUION_Ya_Automatizalo.pdf",
+    icono: "🎬",
+    titulo: "GUION: de la idea a 30 segundos listos para grabar",
+    texto: "El pedido para que Claude te arme el guion en una tabla: el segundo, qué decís y qué se ve. Sin datos inventados.",
+    detalle: "PDF · 2 páginas",
+    tag: "Nuevo"
+  },
+  {
+    archivo: "Ficha_CONTENIDO_Ya_Automatizalo.pdf",
+    icono: "🗓️",
+    titulo: "CONTENIDO: una promo, toda la semana publicada",
+    texto: "De una sola promo salen un Reel, un carrusel, una historia, una foto y un mensaje para tus clientes.",
+    detalle: "PDF · 2 páginas",
+    tag: "Nuevo"
+  },
+  {
+    archivo: "Ficha_SKILLS_Ya_Automatizalo.pdf",
+    icono: "🧩",
+    titulo: "SKILLS: las 5 skills gratis para crear contenido, probadas",
+    texto: "Qué es una skill, qué nos pasó de verdad con las 5 que más se recomiendan, cómo instalar una y cómo armar la tuya.",
+    detalle: "PDF · 2 páginas"
+  },
+  {
     archivo: "Ficha_PRESUPUESTO_Ya_Automatizalo.pdf",
     icono: "🧮",
     titulo: "PRESUPUESTO: contestá un precio en un minuto",
     texto: "Tu lista de precios más el mensaje del cliente, y Claude te arma el presupuesto listo para revisar y mandar, con lo que falta confirmar marcado.",
-    detalle: "PDF · 2 páginas",
-    tag: "Nuevo"
+    detalle: "PDF · 2 páginas"
   },
   {
     archivo: "Ficha_RESENAS_Ya_Automatizalo.pdf",
     icono: "⭐",
     titulo: "RESEÑAS: tres quejas, una sola causa",
     texto: "El pedido para encontrar qué se repite en las quejas de tus clientes y salir con una idea barata para probar mañana.",
-    detalle: "PDF · 2 páginas",
-    tag: "Nuevo"
+    detalle: "PDF · 2 páginas"
   },
   {
     archivo: "Ficha_COMANDA_Ya_Automatizalo.pdf",
     icono: "🥟",
     titulo: "COMANDA: del audio desordenado a la comanda limpia",
     texto: "El pedido por audio, con cambios y todo, convertido en cantidades finales, total y hora de retiro para la cocina.",
-    detalle: "PDF · 2 páginas",
-    tag: "Nuevo"
+    detalle: "PDF · 2 páginas"
   },
   {
     archivo: "Ficha_FORMULA_Ya_Automatizalo.pdf",
