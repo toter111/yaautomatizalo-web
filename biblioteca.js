@@ -5,6 +5,14 @@
    ========================================================= */
 const BIBLIOTECA = [
   {
+    archivo: "Ficha_PROYECTO_Ya_Automatizalo.pdf",
+    icono: "🗂️",
+    titulo: "PROYECTO: 6 reglas para que Claude no se pierda en tu proyecto",
+    texto: "Cómo armar un Proyecto de Claude con instrucciones y 4 documentos para que no se olvide de lo que ya hablaron ni haga cosas que no pediste.",
+    detalle: "PDF · 1 página",
+    tag: "Nuevo"
+  },
+  {
     archivo: "Ficha_GANCHOS_Ya_Automatizalo.pdf",
     icono: "🎣",
     titulo: "GANCHOS: 5 arranques para tu video antes de grabar",
